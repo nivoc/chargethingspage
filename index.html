@@ -9,6 +9,7 @@
   <style type="text/css">
     body {margin: 0; background-color: white}
     pre {margin: 0; padding: 0 0 0 40px; line-height: 14.0px; font: 17px "Courier New", Courier; min-height: 12.0px}
+    #cursor { padding: 0 0 0 30px}
     a {color: black; font-weight: bold}
     .base {background-color: black; color: white; position: absolute; top: 96%; width: 100%}
     .white { color: black; background-color: white;padding: 0 0 0 30px}
@@ -16,6 +17,13 @@
     .impressum { padding-top:13px }
   </style>
   <script>
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    if (evt.keyCode == 13) {
+        var a = document.getElementById("consoletxt")
+        a.append("\n(\\(\\\n(-.-)\nO_(\")(\")\n")
+    }
+}
 function toggleCursor() {
   var x = document.getElementById("cursor")
   if (x.hidden === true) {
@@ -28,7 +36,7 @@ setInterval(toggleCursor, 250)
   </script>
 </head>
 <body>
-<pre class="white">
+<pre class="white" id="consoletxt">
 
 
 Welcome!
@@ -40,7 +48,7 @@ Get in touch: <a href="mailto:jobs@chargethings.de">jobs@chargethings.de</a>
 ╔═╗·))) 
 | |    
 ╚═╝   
-
+</pre>
 <span id='cursor'>░</span>
 <!-- 
 (\(\
